@@ -9,7 +9,7 @@
 		"request-promise-native": "^1.0.5"
 	},
 	"deprecated": false,
-	"description": "Homebridge garage plugin for OpenGarage",
+	"description": "Homebridge plugin for Custom Photo Frame",
 	"devDependencies": {
 		"eslint": "^4.9.0"
 	},
@@ -20,7 +20,6 @@
 	},
 	"keywords": [
 		"homebridge-plugin",
-		"OpenGarage"
 	],
 	"license": "MIT",
 	"main": "index.js",
@@ -34,10 +33,10 @@
 			"email": "salbahra@gmail.com"
 		}
 	],
-	"name": "homebridge-og",
+	"name": "homebridge-photo-frame",
 	"optionalDependencies": {},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"version": "3.1.1"
+	"version": "1.1.1"
 }

@@ -19,7 +19,7 @@
 		"node": ">=8.1.4"
 	},
 	"keywords": [
-		"homebridge-plugin",
+		"homebridge-plugin"
 	],
 	"license": "MIT",
 	"main": "index.js",

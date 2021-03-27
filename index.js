@@ -1,26 +1,25 @@
-const OpenGarageModule = require("./lib/open_garage.js")
-const OpenGarageApiModule = require("./lib/open_garage_api.js")
+const PhotoFrameModule = require("./lib/photo_frame.js")
+const PhotoFrameApiModule = require("./lib/photo_frame_api.js")
 
 module.exports = function( homebridge ) {
     let Service = homebridge.hap.Service
     let Characteristic = homebridge.hap.Characteristic
 
-    class OpenGarageConnect {
+    class PhotoFrameConnect {
         constructor(log, config) {
-            let OpenGarageApi = OpenGarageApiModule(log)
-            let openGarageApi = new OpenGarageApi({
+            let PhotoFrameApi = PhotoFrameApiModule(log)
+            let photoFrameApi = new PhotoFrameApi({
                 ip: config.ip,
                 key: config.key
             })
-            let OpenGarage = OpenGarageModule(log, config, {Service, Characteristic, openGarageApi, setTimeout, clearTimeout, Date})
-            this.openGarage = new OpenGarage(config.name, true)
+            let PhotoFrame = PhotoFrameModule(log, config, {Service, Characteristic, photoFrameApi, setTimeout, clearTimeout, Date})
+            this.photoFrame = new PhotoFrame(config.name, true)
         }
         getServices() {
             return([
-		   this.openGarage.garageService,
-		   this.openGarage.vehicleService,
+		   this.photoFrame.switchService,
 	           ])
         }
     }
-    homebridge.registerAccessory( "homebridge-og", "OpenGarage", OpenGarageConnect );
+    homebridge.registerAccessory( "homebridge-frame", "Photo Frame", PhotoFrameConnect );
 };

@@ -10,7 +10,7 @@ module.exports = function( homebridge ) {
             let PhotoFrameApi = PhotoFrameApiModule(log)
             let photoFrameApi = new PhotoFrameApi({
                 ip: config.ip,
-                key: config.key
+                port: config.port
             })
             let PhotoFrame = PhotoFrameModule(log, config, {Service, Characteristic, photoFrameApi, setTimeout, clearTimeout, Date})
             this.photoFrame = new PhotoFrame(config.name, true)

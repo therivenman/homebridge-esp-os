@@ -1,25 +1,25 @@
-const PhotoFrameModule = require("./lib/photo_frame.js")
-const PhotoFrameApiModule = require("./lib/photo_frame_api.js")
+const EspOsModule = require("./lib/esp_os.js")
+const EspOsApiModule = require("./lib/esp_os_api.js")
 
 module.exports = function( homebridge ) {
     let Service = homebridge.hap.Service
     let Characteristic = homebridge.hap.Characteristic
 
-    class PhotoFrameConnect {
+    class EspOsConnect {
         constructor(log, config) {
-            let PhotoFrameApi = PhotoFrameApiModule(log)
-            let photoFrameApi = new PhotoFrameApi({
+            let EspOsApi = EspOsApiModule(log)
+            let espOsApi = new EspOsApi({
                 ip: config.ip,
                 port: config.port
             })
-            let PhotoFrame = PhotoFrameModule(log, config, {Service, Characteristic, photoFrameApi, setTimeout, clearTimeout, Date})
-            this.photoFrame = new PhotoFrame(config.name, true)
+            let EspOs = EspOsModule(log, config, {Service, Characteristic, espOsApi, setTimeout, clearTimeout, Date})
+            this.espOs = new EspOs(config.name, true)
         }
         getServices() {
             return([
-		   this.photoFrame.switchService,
+		   this.espOs.occupancyService,
 	           ])
         }
     }
-    homebridge.registerAccessory( "homebridge-frame", "Photo Frame", PhotoFrameConnect );
+    homebridge.registerAccessory( "homebridge-esp-os", "ESP Os", EspOsConnect );
 };

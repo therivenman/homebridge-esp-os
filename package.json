@@ -1,6 +1,6 @@
 {
 	"author": {
-		"name": "Samer Albahra"
+		"name": "Matt Wettlaufer"
 	},
 	"bundleDependencies": false,
 	"dependencies": {
@@ -9,7 +9,7 @@
 		"request-promise-native": "^1.0.5"
 	},
 	"deprecated": false,
-	"description": "Homebridge plugin for Custom Photo Frame",
+	"description": "Homebridge plugin for ESP8266 Occupancy Sensor",
 	"devDependencies": {
 		"eslint": "^4.9.0"
 	},
@@ -33,10 +33,10 @@
 			"email": "salbahra@gmail.com"
 		}
 	],
-	"name": "homebridge-photo-frame",
+	"name": "homebridge-esp-os",
 	"optionalDependencies": {},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"version": "1.1.1"
+	"version": "1.0.0"
 }
